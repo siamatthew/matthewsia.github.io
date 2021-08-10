@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Finding the next NBA unicorn</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Matthew Sia</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="about.html">About</a></li>
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="https://cargocollective.com/matthewsia" target="_blank" rel="noopener noreferrer">Others</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Finding the next NBA unicorn</h1>
+							<p>As an avid NBA fan and basketball player, I naturally chose NBA as the topic for one of my projects. Magnificent and rare, just like the mythical horned creatures, the NBA has coined the term “Unicorn” to refer to players who possess uncommon physical qualities and the talent to be above the rest.</p>
+							<h2>What exactly is an NBA Unicorn?</h2>
+							<p>Unicorns have roamed the NBA for years, with their unique blend of size, skills and athleticism. They are all rounders, with the build to play power forward or center and also the technical skills to play guard.<br>
+							<br>Here’s how one would describe at NBA Unicorn:<br>
+							<span>&#8226;</span> Normally bigger than 6’11 (2.1m)<br>
+							<span>&#8226;</span> Excellent three point shooting accuracy<br>
+							<span>&#8226;</span> Has lateral agility<br>
+							<span>&#8226;</span> Exceptional ball handling skills</p>
+
+							<p>I started out by collecting data from two sources – both of which are from Kaggle.</p>
+							<p>The first source is <a href="https://www.kaggle.com/isaienkov/nba2k20-player-dataset">NBA 2K20 PS4 Game</a>. I chose to utilise this dataset because it contains data of the players’ height, weight and salaries etc amongst other attributes – which can largely be used to quantify a player’s physical attributes.</p>
+							<span class="image main"><img src="images/FTNNU_2k20.png" alt="" />Screenshot of the dataset</span>
+							<p>The second source is <a href="https://www.kaggle.com/nicklauskim/nba-per-game-stats-201920?select=nba_2020_advanced.csv">NBA 2019-2020 Statistics</a>. This was an obvious choice because it contains all kinds of basic and advanced stats, from points to rebounds and more – all of which can be used to deduce a player’s technical skills.</p>
+							<span class="image main"><img src="images/FTNNU_NBA_Stats.png" alt="" />Screenshot of the dataset</span>
+							<p>Here is what I had to work with:<br>
+							Both datasets provided all the information I require. However, there are some blank data as well as mismatched variables. Some of the European players’ names were spelt with alien/foreign characters. I did a Google search to fill in the missing data manually as well as converted all the players’ names to a legible format (e.g. “Luka DonÄiÄ‡” has been corrected to “Luka Doncic”).</p> 
+							
+							<p>Once I’ve gathered and standardised all the data, I designed the Entity-Relationship Diagram (ERD) and Relational Schema. This is the initial step for database design.</p>
+							
+							<p>To ensure data integrity, I then created entities (tables) required to store the data collected, based on three most common levels of normalization. Normalization, by definition, is the process of organising data in order to reduce redundancy by dividing a database into two or more tables and then defining table relationships. The objective of this operation is to isolate data so that additions, deletions, and modifications occurring in each field can be made inside one table and then propagated throughout the rest of the database using these defined relationships. The first three normalization forms (NFs) I focused in this project are:<br>
+							<span>&#8226;</span> 1NF: Eliminate repeating groups<br>
+							<span>&#8226;</span> 2NF: Eliminate redundant data<br>
+							<span>&#8226;</span> 3NF: Eliminate columns not dependent on key<br></p>
+							<span class="image main"><img src="images/FTNNU_Database_ERD.png" alt="" />The figure above shows the NBA Entity-Relationship Diagram (ERD) based on the available data set I have.</span>
+							The ERD comprises 3 entities:
+							<ol type="1">
+								<li>Player records with attributes of Player_ID, Player_Name, Position, Age, Height, Weight, Salary and Country</li>
+								<li>Identifying relationships (e.g. A player may play for many teams but a team can only take 1 player)</li>
+								<li>Individual players’ statistics</li>
+							</ol>
+							<span class="image main"><img src="images/FTNNU_Database_Schema.png" alt="" />The figure below shows the relational schema:</span>
+							<p>After firming up the database schema, data preparation was done by cleaning, harmonising, transforming data type and exporting each of the entities to .CSV file. I then created an NBA database using SQL Server Management Studio (SSMS) and imported data into the database through a flat file. With that, it is ready to retrieve data for analysis by answering the questions using SQL:</p>
+							<p><b>What is the average height in the NBA League?</b><br>
+							<SQL>SELECT ROUND(AVG(Player_Height_CM),2) "Average Height" FROM Player;</p>
+							<p><b>What is the average points per game from the NBA players?</b><br>
+							<SQL>SELECT ROUND(AVG(PTS),2) "Average_PPG" FROM PlayerStats;</p>
+							<p><b>What is the average three point percentage throughout the league?</b><br>
+							<SQL>SELECT ROUND(AVG(_3P1*100),2) "Average_3PT_Percentage" FROM PlayerStats;</p>
+							<span class="image main"><img src="images/FTNNU_Average3.png" alt="" />Screenshot of SQL Query Results</span>
+							<P><b>Who are the top 5 players who are over 6’11 and has the highest points per game (Best scorer)?</b><br>
+							<SQL>SELECT TOP 5 PS.Player_Name, P.Player_Height_FT, P.Player_Height_CM,  PS.PTS AS PPG<br>
+							From PlayerStats PS<br>
+							JOIN Player P ON PS.Player_Name = P.Player_Name AND P.Player_Height_CM >= 2.1<br>
+							WHERE PTS >= 19<br>
+							ORDER BY PPG DESC;</SQL></P>
+							<span class="image main"><img src="images/FTNNU_PPG3.png" alt="" />Screenshot of SQL Query Results</span>
+							<P><b>Who are the top 5 Big men who have a high 3-point percentage (Best shooter)?</b><br>
+							<SQL>SELECT TOP 5 PS.Player_Name, P.Player_Height_FT, P.Player_Height_CM, PS._3P1 * 100 AS ThreePtPercentage<br>
+							From PlayerStats PS<br>
+							JOIN Player P ON PS.Player_Name =P.Player_Name AND P.Player_Height_CM >= 2.1<br>
+							WHERE _3P >= 1.5<br>
+							ORDER BY ThreePtPercentage DESC;</SQL></P>
+							<span class="image main"><img src="images/FTNNU_3PT3.png" alt="" />Screenshot of SQL Query Results</span>
+							The end result is what I call the “Unicorn dashboard”. It displays the average height and stats of NBA players and identifies the players who perform well above the average. To have big men score 29.5 points per game (ppg) and to have an average of 41% accuracy is crazy.
+							<span class="image main"><img src="images/FTNNU_Report.png" alt="" />Screenshot of Unicorn dashboard</span>
+							The average points per game of an NBA player is 8.46 ppg and the three point percentage is 29.7percent.
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/matthewsiayk/" class="icon brands style2 fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/siamatthew" class="icon brands style2 fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Matthew Sia. All rights reserved</li><li>Design: <a href="https://en.wiktionary.org/wiki/limpeh">Lim Peh</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
