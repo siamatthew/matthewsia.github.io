@@ -1,147 +1,270 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Cash for kicks</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <head>
+    <title>Cash for kicks</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <span class="symbol"><img src="images/MS_logo.jpg" alt="" /></span
+            ><span class="title">Matthew Sia</span>
+          </a>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Matthew Sia</span>
-								</a>
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Projects</a></li>
+          <li>
+            <a
+              href="https://cargocollective.com/matthewsia"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Others</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <h1>Cash for kicks</h1>
+          <p>
+            Sneakers have always been a passion of mine. For this project, I
+            decided to research on the business of reselling sneakers for
+            profit. I analyzed the potential sneakers resale value based on the
+            existing consumer datasets from StockX (sneaker resale online
+            marketplace) using Power Query and presented the insights with a
+            visual and interactive dashboard using Microsoft Excel.
+          </p>
+          <h2>Backstory</h2>
+          <p>
+            My very first pair of sneakers were the
+            <a
+              href="https://stockx.com/nike-dunk-high-mesa-orange"
+              target="_blank"
+              >Nike Dunk High</a
+            >, which I paid S$80 (US$60) for in 2004. They are currently valued
+            at US$450 on StockX. That’s a return capital of more than 750% in
+            seventeen years or so.
+          </p>
+          <p>
+            Who would have thought that the sneaker reselling market would one
+            day become mainstream? E-commerce sites such as
+            <a href="https://stockx.com/" target="_blank">StockX</a> and
+            <a href="https://www.goat.com/" target="_blank">Goat</a> have made
+            it accessible for people who once did not have access to these
+            exclusive releases.
+          </p>
+          <h3>Discovering the most valuable sneakers</h3>
+          <p>
+            For this project, I explored a StockX
+            <a
+              href="https://stockx.com/news/the-2019-data-contest/"
+              target="_blank"
+              >dataset</a
+            >
+            which contains the sales information for every transaction made in
+            the US of Off-White and Yeezy brands from 2017 to 2019.
+          </p>
+          <p>
+            From their data set, there are 8 variables to work with:<br />
+            <span>&#8226;</span> Order date<br />
+            <span>&#8226;</span> Brand<br />
+            <span>&#8226;</span> Sneaker name<br />
+            <span>&#8226;</span> Sale price<br />
+            <span>&#8226;</span> Retail price<br />
+            <span>&#8226;</span> Release date<br />
+            <span>&#8226;</span> Shoe size<br />
+            <span>&#8226;</span> Buyer state
+          </p>
 
-						</div>
-					</header>
+          <p>
+            With that, I added another variable to the data set – the return of
+            investment (ROI). I then created a visualisation which looked at the
+            sales trend, top 10 sneakers with the best (ROI) and the region
+            where these sneakers are the most “flippable”. Interactive features
+            were added to the dashboard to provide further insights.
+          </p>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
+          <p>
+            Based on preference, the data can be filtered to view the most
+            in-demand sneakers and their ROI. A specific sneaker model can also
+            be analyzed in detail – from the number of pairs being sold over
+            different years to the ROI of that pair.
+          </p>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Cash for kicks</h1>
-							<p>Sneakers have always been a passion of mine. For this project, I decided to research on the business of reselling sneakers for profit. I analyzed the potential sneakers resale value based on the existing consumer datasets from StockX (sneaker resale online marketplace) using Power Query and presented the insights with a visual and interactive dashboard using Microsoft Excel.</p>
-							<h2>Backstory</h2>
-							<p>My very first pair of sneakers were the <a href="https://stockx.com/nike-dunk-high-mesa-orange" target="_blank">Nike Dunk High</a>, which I paid S$80 (US$60) for in 2004. They are currently valued at US$450 on StockX. That’s a return capital of more than 750% in seventeen years or so.</p>
-							<p>Who would have thought that the sneaker reselling market would one day become mainstream? E-commerce sites such as <a href="https://stockx.com/" target="_blank">StockX</a> and <a href="https://www.goat.com/" target="_blank">Goat</a> have made it accessible for people who once did not have access to these exclusive releases.</p>
-							<h3>Discovering the most valuable sneakers</h3>
-							<p>For this project, I explored a StockX <a href="https://stockx.com/news/the-2019-data-contest/" target="_blank">dataset</a> which contains the sales information for every transaction made in the US of Off-White and Yeezy brands from 2017 to 2019.</p>
-							<p>From their data set, there are 8 variables to work with:<br> 
-							<span>&#8226;</span> Order date<br>
-							<span>&#8226;</span> Brand<br>
-							<span>&#8226;</span> Sneaker name<br>
-							<span>&#8226;</span> Sale price<br>
-							<span>&#8226;</span> Retail price<br>
-							<span>&#8226;</span> Release date<br>
-							<span>&#8226;</span> Shoe size<br>
-							<span>&#8226;</span> Buyer state</p>
-							
-							<p>With that, I added another variable to the data set – the return of investment (ROI). I then created a visualisation which looked at the sales trend, top 10 sneakers with the best (ROI) and the region where these sneakers are the most “flippable”. Interactive features were added to the dashboard to provide further insights.</p>
-  
-							<p>Based on preference, the data can be filtered to view the most in-demand sneakers and their ROI. A specific sneaker model can also be analyzed  in detail – from the number of pairs being sold over different years to the ROI of that pair.</p>
+          <p>Here’s a preview of the initial dashboard:</p>
+          <span class="image main"
+            ><img src="images/CFK_Dashboard_full.gif" alt=""
+          /></span>
 
-							<p>Here’s a preview of the initial dashboard:</p>
-							<span class="image main"><img src="images/CFK_Dashboard_full.gif" alt="" /></span>
+          <p>
+            When the respective year is selected, the dashboard will show the
+            sales and profit based on the monthly performance of the year.
+          </p>
 
-							<p>When the respective year is selected, the dashboard will show the sales and profit based on the monthly performance of the year.</p>
+          <p>
+            The best investment is Air Jordan 1 - Retro High Off White Chicago,
+            with a retail price of US$190. Its ROI increases every year, with
+            2017 at 657%, 2018 at 957% and 2019 at 1256%.
+          </p>
+          <span class="image main"
+            ><img src="images/CFK_ROI_OffWhite_1.png" alt=""
+          /></span>
+          <p>
+            Here’s a table summary of the Air Jordan 1-Retro: In 2019, this shoe
+            has a profit of $2,386. <i>Ka-ching!</i>
+          </p>
+          <span class="image main"
+            ><img src="images/CFK_Summary_OffWhite_1.png" alt=""
+          /></span>
+          <p>
+            When people flip sneakers, what they are really doing is buying
+            exclusive models at retail price, waiting until the supply of the
+            shoes decreases, and then reselling them at a much higher price.
+          </p>
+          <span class="image main"
+            ><img src="images/CFK_Yeezy_Comparison.png" alt=""
+          /></span>
 
-							<p>The best investment is Air Jordan 1 - Retro High Off White Chicago, with a retail price of US$190. Its ROI increases every year, with 2017 at 657%,  2018 at 957% and 2019 at 1256%.</p>
-							<span class="image main"><img src="images/CFK_ROI_OffWhite_1.png" alt="" /></span>
-							<p>Here’s a table summary of the Air Jordan 1-Retro: In 2019, this shoe has a profit of $2,386. <i>Ka-ching!</i></p>
-							<span class="image main"><img src="images/CFK_Summary_OffWhite_1.png" alt="" /></span>
-							<p>When people flip sneakers, what they are really doing is buying exclusive models at retail price, waiting until the supply of the shoes decreases, and then reselling them at a much higher price.</p>
-							<span class="image main"><img src="images/CFK_Yeezy_Comparison.png" alt="" /></span>
+          <p>
+            If you want to focus on taking smaller gains in short term trends,
+            Yeezy would be a good pair to invest because it is always in demand
+            according to the StockX dataset. Recently, a pair of
+            <a
+              href="https://www.nbcnews.com/news/us-news/kanye-west-sneakers-fetch-record-1-8-million-private-sale-n1265358"
+              target="_blank"
+              >Yeezy</a
+            >
+            (worn by Kayne West no less) sold for a record 1.8 million dollars!
+          </p>
+          <span class="image main"
+            ><img src="images/CFK_Map.png" alt=""
+          /></span>
 
-							<p>If you want to focus on taking smaller gains in short term trends, Yeezy would be a good pair to invest because it is always in demand according to the StockX dataset. Recently, a pair of <a href="https://www.nbcnews.com/news/us-news/kanye-west-sneakers-fetch-record-1-8-million-private-sale-n1265358" target="_blank">Yeezy</a> (worn by Kayne West no less) sold for a record 1.8 million dollars!</p>
-							<span class="image main"><img src="images/CFK_Map.png" alt="" /></span>
+          <p>
+            The above visual illustrates where most of the buyers are coming
+            from – the highest amount of sales are in California and New York.
+            Even though these two major cities had the highest sales overall, it
+            is also interesting to note that other regions also have substantial
+            amount of sales – StockX has made these brands more accessible to
+            areas where it was previously lesser known.
+          </p>
 
+          <p>
+            In conclusion, selling sneakers is a lucrative business and can
+            potentially lead to a windfall of profits in a short amount of time.
+          </p>
+        </div>
+      </div>
 
-							<p>The above visual illustrates where most of the buyers are coming from – the highest amount of sales are in California and New York. Even though these two major cities had the highest sales overall, it is also interesting to note that other regions also have substantial amount of sales – StockX has made these brands more accessible to areas where it was previously lesser known.</p>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Get in touch</h2>
+            <form method="post" action="#">
+              <div class="fields">
+                <div class="field half">
+                  <input type="text" name="name" id="name" placeholder="Name" />
+                </div>
+                <div class="field half">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="field">
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                  ></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Send" class="primary" /></li>
+              </ul>
+            </form>
+          </section>
+          <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/matthewsiayk/"
+                  class="icon brands style2 fa-linkedin"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/siamatthew"
+                  class="icon brands style2 fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon solid style2 fa-phone"
+                  ><span class="label">Phone</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon solid style2 fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+            </ul>
+          </section>
+          <ul class="copyright">
+            <li>&copy; Matthew Sia. All rights reserved</li>
+            <li>
+              Design:
+              <a href="https://en.wiktionary.org/wiki/limpeh">Lim Peh</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
 
-
-
-
-							<p>In conclusion, selling sneakers is a lucrative business and can potentially lead to a windfall of profits in a short amount of time.</p>
-
-						</div>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/matthewsiayk/" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/siamatthew" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Matthew Sia. All rights reserved</li><li>Design: <a href="https://en.wiktionary.org/wiki/limpeh">Lim Peh</a></li>
-							</ul>
-						</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

@@ -1,156 +1,359 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>McCalories - My McDonald's Story</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <head>
+    <title>McCalories - My McDonald's Story</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <span class="symbol"><img src="images/MS_logo.jpg" alt="" /></span
+            ><span class="title">Matthew Sia</span>
+          </a>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Matthew Sia</span>
-								</a>
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Projects</a></li>
+          <li>
+            <a
+              href="https://cargocollective.com/matthewsia"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Others</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <h1>My McDonald's Story</h1>
+          <p>
+            <b
+              >I used to be a chubby kid growing up - I love McDonald’s and
+              visited them at least four times a month. At my heaviest, I was
+              102kg and struggled with losing weight. When I was about 17 years
+              old, I managed to shed away 20kg by counting my calorie intake and
+              sweating my ass off playing basketball and running daily.</b
+            >
+          </p>
+          <p>
+            One time, after one of my usual basketball sessions, my friends
+            suggested going to McDonalds for supper. I decided to join them as I
+            felt that I had burnt enough calories during the basketball session.
+            <b
+              >I ordered a meal which consisted of 20 pieces of McNuggets, large
+              fries and a large Coke.</b
+            >
+          </p>
+          <span class="image main"
+            ><img src="images/Meal_400.png" alt=""
+          /></span>
+          <p>
+            I remember thinking to myself, “So what’s the total calories for
+            this meal?” and “How would I know if the meal I’ve ordered fits my
+            recommended daily calories intake?”. This sparked off an idea to
+            create an app that would give me enough information about food items
+            on the McDonald’s menu to help me make better choices.
+          </p>
+          <p>
+            I started out by doing some research on McDonald’s — I went to check
+            out their website, app and also looked for references of their
+            instores menu and this what I observed:
+          </p>
+          <h3>McDonald’s App</h3>
+          <p>
+            On the app, there is a “Nutrition” page hidden under the “More” tab.
+            On the “Nutrition” tab, there are some broad categories like “Eat
+            Light under 500 calories” for breakfast, lunch and dinner. From
+            there, the full menu can be accessed; nutrition value will be
+            displayed for some times when you click into them. For items with
+            the nutrition value available, there will be a link to a Nutrition
+            Calculator which allows you to select multiple food items from the
+            menu to add up and see the total calories. Overall, this feature is
+            not easily discoverable.
+          </p>
+          <span class="image main"
+            ><img src="images/MC_MenuApp.png" alt="" />Screenshot of the
+            McDonald's App.</span
+          >
+          <h3>McDonald’s website</h3>
+          <p>
+            The same Nutrition Calculator can be found at the footer of the
+            website. Again, the location of the Nutrition Calculator is not very
+            discoverable.
+          </p>
+          <span class="image main"
+            ><img src="images/MC_MenuOnline.png" alt="" />Screenshot of the
+            McDonald's Website.</span
+          >
+          <h3>McDonald’s in-store menu board</h3>
+          <p>
+            Little to no nutrition-related information is being displayed — the
+            only food items which are accompanied by caloric information are the
+            salads or wraps.
+          </p>
+          <span class="image main"
+            ><img src="images/MC_MenuStore2.png" alt="" />Photo of McDonald's
+            Store Menu</span
+          >
+          <span class="image main"
+            ><img src="images/MC_MenuStore1.png" alt="" />Photo of McDonald's
+            self-service kiosk</span
+          >
+          <p>
+            The McDonald’s Nutrition Calculator is a rather basic tool – it
+            simply adds up and presents to you the consolidated nutritional
+            value of all the items you have selected. I wanted to take it one
+            step further and create an app that would provide full transparency
+            of the caloric information of each McDonald food item, as well as a
+            straightforward way for users to compare between food items and find
+            out if their selection would exceed their calorie budget based on
+            gender*. With that, I set out to develop an interactive McDonald’s
+            calorie app using Microsoft PowerBI.
+          </p>
+          <span class="image main"
+            ><img src="images/MC_DataRaw.png" alt="" />Screenshot of the orginal
+            dataset from Kaggle.</span
+          >
+          <p>
+            For this project, I referenced a dataset from
+            <a href="https://www.kaggle.com/mcdonalds/nutrition-facts">kaggle</a
+            >. This dataset provides the nutrition analysis of every menu item
+            on the US McDonald's menu – this includes breakfast, beef burgers,
+            chicken and fish sandwiches, fries, salads, soda, coffee and tea,
+            milkshakes, and desserts.
+          </p>
+          <h2>Checking the quality of data</h2>
+          <span class="image main"
+            ><img src="images/MC_DataEdit.PNG" alt="" />Screenshot of dataset
+            after I cleaned it up.</span
+          >
+          <p>
+            To ensure the quality of the data, I did a check to identify and
+            clean up any null value or incorrect data type from this dataset.
+            Also, the original data under the ‘Serving size’ column was in
+            various units (e.g. Ounce, Fluid Ounce, Gram and Millilitre) so I
+            standardized it to a single unit – Gram. The Serving Size was also
+            provided in a text format (object), which I then converted to a
+            number (float64).
+          </p>
+          <h2>Creating new attributes: calorie budget</h2>
+          <p>
+            I also wanted users to also be able to track the calories against
+            their own calorie budget. First, I went to find out the recommended
+            daily calorie intake* for each gender – it’s 2,000 calories per day
+            for women and 2,500 per day for men. I then created two new
+            attributes for each gender:
+          </p>
+          <span class="image main"
+            ><img src="images/MC_DataClean.png" alt=""
+          /></span>
+          <h3>Percentage daily value</h3>
+          <p>
+            This converts the calories of a food item into a percentage based on
+            each gender’s recommended daily calories intake. E.g. If a man’s
+            recommended daily calorie intake is 2,500 calories and a small
+            McDonald’s Latte is 170 calories, this means that the small
+            McDonald’s Latte will “cost” 6.8% of his daily calorie intake.
+          </p>
+          <h3>Per meal value (%)</h3>
+          <p>
+            This converts the calories of a food item into a percentage based on
+            each gender’s average meal allowance. Each gender’s meal allowance
+            is simply a division of the recommended daily calorie intake into
+            three meals. E.g. If a woman's recommended daily calorie intake is
+            2,000, then her per meal calories allowance will be approximately
+            660 calories. If a small McDonald’s Latte is 170 calories, this
+            means that the small McDonald’s Latte will be 25.5% of her per meal
+            allowance. This allows a user to be able to gauge if a food item
+            will fit into her calorie budget for each meal.
+          </p>
+          <h3>User interface</h3>
+          <span class="image main"
+            ><img src="images/MC_Dashboard.png" alt="" />There are 260 items on
+            the McDonald’s menu.</span
+          >
+          <h3>Search bar</h3>
+          <span class="image main"
+            ><img src="images/MC_find.png" alt=""
+          /></span>
+          <p>
+            A search bar has been placed on the dashboard to allow users to
+            conveniently search for a food item.
+          </p>
+          <h3>Treemap: Average calories per item by category</h3>
+          <span class="image main"
+            ><img src="images/MC_tree.png" alt=""
+          /></span>
+          <p>
+            On the treemap, the average calorie per item is displayed for each
+            category – users are able to use this information to make quick
+            selections. E.g. food items in the <b>Chicken & Fish</b> category
+            have the highest calories on average so <b>Beef and Pork</b> might
+            be a better choice if you’re counting your calories.
+            <b>Smoothies & Shakes</b> have the second highest calorie on
+            average, so you might want to think twice before you get that.
+          </p>
+          <h3>Bar charts: Food items with lowest calories</h3>
+          <span class="image main"
+            ><img src="images/MC_Charts.png" alt=""
+          /></span>
+          <p>
+            I also grouped the categories into three broad categories (Meals,
+            Snack and Drinks) and created charts to display food items with the
+            lowest calories for each broad category. This provides a quick
+            recommendation to the user.
+          </p>
+          <p>
+            <b
+              >Referring back to what I ordered after my basketball game, 20
+              pieces of McNuggets, large fries and a large Coke adds up to a
+              total of 1730 calories – this is more than half of my daily
+              intake.</b
+            >
+          </p>
+          <span class="image main"
+            ><img src="images/MC_McNuggets.png" alt=""
+          /></span>
 
-						</div>
-					</header>
+          <h2>Further insights</h2>
+          <span class="image main"
+            ><img src="images/MC_Dashboard2.png" alt=""
+          /></span>
+          <p>
+            A second-level page was also created for users to drill down into
+            the food item they have selected. On this page, there is a meter to
+            help users visualise and gauge if the selected food item will fit
+            their calorie budget.
+          </p>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
+          Note:
+          <p>
+            I would have liked for the user to be able to select multiple items
+            and see the details for those items. However, upon research, I found
+            out that this version of Power BI does not support the selection of
+            multiple items when drilling through.
+          </p>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>My McDonald's Story</h1>
-							<p><b>I used to be a chubby kid growing up - I love McDonald’s and visited them at least four times a month. At my heaviest, I was 102kg and struggled with losing weight. When I was about 17 years old, I managed to shed away 20kg by counting my calorie intake and sweating my ass off playing basketball and running daily.</b></p>
-							<p>One time, after one of my usual basketball sessions, my friends suggested going to McDonalds for supper. I decided to join them as I felt that I had burnt enough calories during the basketball session. <b>I ordered a meal which consisted of 20 pieces of McNuggets, large fries and a large Coke.</b></p>
-							<span class="image main"><img src="images/Meal_400.png" alt=""/></span>
-							<p>I remember thinking to myself, “So what’s the total calories for this meal?” and “How would I know if the meal I’ve ordered fits my recommended daily calories intake?”. This sparked off an idea to create an app that would give me enough information about food items on the McDonald’s menu to help me make better choices.</p>
-							<p>I started out by doing some research on McDonald’s —  I went to check out their website, app and also looked for references of their instores menu and this what I observed:</p>
-							<h3>McDonald’s App</h3>
-							<p>On the app, there is a “Nutrition” page hidden under the “More” tab. On the “Nutrition” tab, there are some broad categories like “Eat Light under 500 calories” for breakfast, lunch and dinner. From there, the full menu can be accessed; nutrition value will be displayed for some times when you click into them. For items with the nutrition value available, there will be a link to a Nutrition Calculator which allows you to select multiple food items from the menu to add up and see the total calories. Overall, this feature is not easily discoverable.</p>
-							<span class="image main"><img src="images/MC_MenuApp.png" alt="" />Screenshot of the McDonald's App.</span>
-							<h3>McDonald’s website</h3>
-							<p>The same Nutrition Calculator can be found at the footer of the website. Again, the location of the Nutrition Calculator is not very discoverable.</p>
-							<span class="image main"><img src="images/MC_MenuOnline.png" alt="" />Screenshot of the McDonald's Website.</span>
-							<h3>McDonald’s in-store menu board</h3>
-							<p>Little to no nutrition-related information is being displayed — the only food items which are accompanied by caloric information are the salads or wraps. </p>
-							<span class="image main"><img src="images/MC_MenuStore2.png" alt="" />Photo of McDonald's Store Menu</span>
-							<span class="image main"><img src="images/MC_MenuStore1.png" alt="" />Photo of McDonald's self-service kiosk</span>
-							<p>The McDonald’s Nutrition Calculator is a rather basic tool – it simply adds up and presents to you the consolidated nutritional value of all the items you have selected. I wanted to take it one step further and create an app that would provide full transparency of the caloric information of each McDonald food item, as well as a straightforward way for users to compare between food items and find out if their selection would exceed their calorie budget based on gender*. With that, I set out to develop an interactive McDonald’s calorie app using Microsoft PowerBI.</p>
-							<span class="image main"><img src="images/MC_DataRaw.png" alt="" />Screenshot of the orginal dataset from Kaggle.</span>
-							<p>For this project, I referenced a dataset from <a href="https://www.kaggle.com/mcdonalds/nutrition-facts">kaggle</a>. This dataset provides the nutrition analysis of every menu item on the US McDonald's menu – this includes breakfast, beef burgers, chicken and fish sandwiches, fries, salads, soda, coffee and tea, milkshakes, and desserts.</p>
-							<h2>Checking the quality of data</h2>
-							<span class="image main"><img src="images/MC_DataEdit.PNG" alt="" />Screenshot of dataset after I cleaned it up.</span>
-							<p>To ensure the quality of the data, I did a check to identify and clean up any null value or incorrect data type from this dataset. Also, the original data under the ‘Serving size’ column was in various units (e.g. Ounce, Fluid Ounce, Gram and Millilitre) so I standardized it to a single unit  – Gram. The Serving Size was also provided in a text format (object), which I then converted to a number (float64).</p>
-							<h2>Creating new attributes: calorie budget</h2>
-							<p>I also wanted users to also be able to track the calories against their own calorie budget. First, I went to find out the recommended daily calorie intake* for each gender – it’s 2,000 calories per day for women and 2,500 per day for men. I then created two new attributes for each gender:</p>
-							<span class="image main"><img src="images/MC_DataClean.png" alt="" /></span>
-							<h3>Percentage daily value</h3>
-							<p>This converts the calories of a food item into a percentage based on each gender’s recommended daily calories intake. E.g. If a man’s recommended daily calorie intake is 2,500 calories and a small McDonald’s Latte is 170 calories, this means that the small McDonald’s Latte will “cost” 6.8% of his daily calorie intake.</p>
-							<h3>Per meal value (%)</h3>
-							<p>This converts the calories of a food item into a percentage based on each gender’s average meal allowance. Each gender’s meal allowance is simply a division of the recommended daily calorie intake into three meals. E.g. If a woman's recommended daily calorie intake is 2,000, then her per meal calories allowance will be approximately 660 calories. If a small McDonald’s Latte is 170 calories, this means that the small McDonald’s Latte will be 25.5% of her per meal allowance. This allows a user to be able to gauge if a food item will fit into her calorie budget for each meal.</p>
-							<h3>User interface</h3>
-							<span class="image main"><img src="images/MC_Dashboard.png" alt="" />There are 260 items on the McDonald’s menu.</span>
-							<h3>Search bar</h3>
-							<span class="image main"><img src="images/MC_find.png" alt="" /></span>
-							<p>A search bar has been placed on the dashboard to allow users to conveniently search for a food item.</p>
-							<h3>Treemap: Average calories per item by category</h3>
-							<span class="image main"><img src="images/MC_tree.png" alt="" /></span>
-							<p>On the treemap, the average calorie per item is displayed for each category – users are able to use this information to make quick selections. E.g. food items in the <b>Chicken & Fish</b> category have the highest calories on average so <b>Beef and Pork</b> might be a better choice if you’re counting your calories. <b>Smoothies & Shakes</b> have the second highest calorie on average, so you might want to think twice before you get that.</p>
-							<h3>Bar charts: Food items with lowest calories</h3>
-							<span class="image main"><img src="images/MC_Charts.png" alt="" /></span>
-							<p>I also grouped the categories into three broad categories (Meals, Snack and Drinks) and created charts to display food items with the lowest calories for each broad category. This provides a quick recommendation to the user.</p>
-							<p><b>Referring back to what I ordered after my basketball game, 20 pieces of McNuggets, large fries and a large Coke adds up to a total of 1730 calories – this is more than half of my daily intake.</b></p>
-							<span class="image main"><img src="images/MC_McNuggets.png" alt="" /></span>
- 
-							<h2>Further insights</h2>
-							<span class="image main"><img src="images/MC_Dashboard2.png" alt="" /></span>
-							<p>A second-level page was also created for users to drill down into the food item they have selected. On this page, there is a meter to help users visualise and gauge if the selected food item will fit their calorie budget.</p>
- 
-							Note: 
-							<p>I would have liked for the user to be able to select multiple items and see the details for those items. However, upon research, I found out that this version of Power BI does not support the selection of multiple items when drilling through.</p>
- 
- 
-							<p>*Each person's calorie budget may differ based on their height, weight, age, gender and more. Taking the project timeline into consideration, I’ve based the calorie budget on just one factor – gender.</p>
-							<p>2 This information was taken from: https://www.nhs.uk/common-health-questions/food-and-diet/what-should-my-daily-intake-of-calories-be/</p>
-						</div>
-					</div>
+          <p>
+            *Each person's calorie budget may differ based on their height,
+            weight, age, gender and more. Taking the project timeline into
+            consideration, I’ve based the calorie budget on just one factor –
+            gender.
+          </p>
+          <p>
+            2 This information was taken from:
+            https://www.nhs.uk/common-health-questions/food-and-diet/what-should-my-daily-intake-of-calories-be/
+          </p>
+        </div>
+      </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/matthewsiayk/" class="icon brands style2 fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/siamatthew" class="icon brands style2 fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Matthew Sia. All rights reserved.</li>
-							</ul>
-						</div>
-					</footer>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Get in touch</h2>
+            <form method="post" action="#">
+              <div class="fields">
+                <div class="field half">
+                  <input type="text" name="name" id="name" placeholder="Name" />
+                </div>
+                <div class="field half">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="field">
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                  ></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Send" class="primary" /></li>
+              </ul>
+            </form>
+          </section>
+          <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/matthewsiayk/"
+                  class="icon brands style2 fa-linkedin"
+                  target="_blank"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/siamatthew"
+                  class="icon brands style2 fa-github"
+                  target="_blank"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon solid style2 fa-phone"
+                  ><span class="label">Phone</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon solid style2 fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+            </ul>
+          </section>
+          <ul class="copyright">
+            <li>&copy; Matthew Sia. All rights reserved.</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
